@@ -11,12 +11,12 @@ const Pecas = () => {
       imageSrc: '/* Coloque o caminho da imagem do Sensor ultrassônico aqui */',
     },
     {
-      title: 'Placa Arduíno',
+      title: 'Placa Arduino',
       description:
         'Uma plataforma de prototipagem eletrônica de código aberto, utilizada para criar projetos interativos e controlar dispositivos através de entradas e saídas digitais e analógicas.',
       price: 'R$ 40,00',
-      imageAlt: 'Imagem da Placa Arduíno',
-      imageSrc: '/* Coloque o caminho da imagem da Placa Arduíno aqui */',
+      imageAlt: 'Imagem da Placa Arduino',
+      imageSrc: '/* Coloque o caminho da imagem da Placa Arduino aqui */',
     },
     {
       title: 'Protoboard',
@@ -37,21 +37,21 @@ const Pecas = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center  min-h-screen py-8">
-      <h1 className="text-4xl font-bold mb-8">Peças</h1>
+    <div className="flex flex-col items-center min-h-screen py-12 bg-gray-100">
+      <h1 className="text-blue-400 text-5xl font-bold mb-8">Peças</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {items.map((item, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-lg shadow-lg text-center"
+            className="bg-white p-8 rounded-lg shadow-lg text-center"
           >
             <img
               src={item.imageSrc}
               alt={item.imageAlt}
               className="mx-auto mb-4"
             />
-            <h2 className="text-xl font-bold mb-2">{item.title}</h2>
-            <p className="text-gray-700 mb-4">{item.description}</p>
+            <h2 className="text-2xl font-bold mb-2 text-blue-400">{item.title}</h2>
+            <p className="text-gray-700 text-xl mb-4">{item.description}</p>
             <p className="text-lg font-bold">{item.price}</p>
           </div>
         ))}
