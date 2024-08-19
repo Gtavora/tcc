@@ -5,17 +5,16 @@ import React, { useState, useEffect } from "react";
 function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const controlHeader = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
-        
         setShowHeader(false);
       } else {
-      
         setShowHeader(true);
       }
-      setLastScrollY(window.scrollY); 
+      setLastScrollY(window.scrollY);
     }
   };
 
@@ -23,7 +22,6 @@ function Header() {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlHeader);
 
-   
       return () => {
         window.removeEventListener("scroll", controlHeader);
       };
@@ -35,21 +33,54 @@ function Header() {
       className={`w-full bg-gradient-to-r from-blue-600 to-teal-400 shadow-lg sticky top-0 z-10 transition-transform duration-300 ${
         showHeader ? "transform translate-y-0" : "transform -translate-y-full"
       }`}
+      
     >
-      <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <img src={Logo} alt="Logo" className="w-24" />
+      <nav className="max-w-7xl mx-auto px-1 flex items-center h-20">
+        <div className="flex items-center flex-shrink-0">
+          <Link to="/" className="inline-block">
+            <img src={Logo} alt="Logo" className="w-32 h-auto" />
+          </Link>
         </div>
-        <div className="space-x-6 text-white text-xs font-medium">
-          <Link to="/home" className="hover:underline text-xl">Home</Link>
-          <Link to="/quem-somos" className="hover:underline text-xl">Sobre Nós</Link>
-          <Link to="/projeto" className="hover:underline text-xl">Projeto</Link>
-          <Link to="/objetivo" className="hover:underline text-xl">Objetivo</Link>
+
+        <div className="hidden md:flex flex-1 justify-center space-x-6 text-white text-lg font-medium">
+          <Link to="/home" className="hover:underline">Home</Link>
+          <Link to="/projeto" className="hover:underline">Projeto</Link>
+          <Link to="/objetivo" className="hover:underline">Objetivo</Link>
         </div>
-        <button className="bg-white text-teal-600 py-1 px-4 rounded-full hover:bg-gray-200 shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-sm">
-          <Link to="/contato" className="hover text-xl">Contato</Link>
-        </button>
+
+        <div className="hidden md:flex items-center flex-shrink-0">
+          <Link to="/quem-somos">
+            <button className="bg-white text-teal-600 py-2 px-6 rounded-full hover:bg-gray-200 shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-lg">
+              Sobre Nós
+            </button>
+          </Link>
+        </div>
+
+        <div className="md:hidden flex items-center ml-auto">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white focus:outline-none"
+            aria-label="Open menu"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
       </nav>
+
+      <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"} bg-gradient-to-r from-blue-600 to-teal-400 text-white`}>
+        <div className="flex flex-col items-center py-4 space-y-4">
+          <Link to="/home" className="text-xl hover:underline" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link to="/projeto" className="text-xl hover:underline" onClick={() => setIsMenuOpen(false)}>Projeto</Link>
+          <Link to="/objetivo" className="text-xl hover:underline" onClick={() => setIsMenuOpen(false)}>Objetivo</Link>
+          <Link to="/quem-somos">
+            <button className="bg-white text-teal-600 py-2 px-6 rounded-full hover:bg-gray-200 shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-xl" onClick={() => setIsMenuOpen(false)}>
+              Sobre Nós
+            </button>
+          </Link>
+        </div>
+      </div>
     </header>
   );
 }
