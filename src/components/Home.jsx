@@ -92,7 +92,9 @@ function Home() {
           className="bg-blue-400 text-white p-3 sm:p-4 rounded-full shadow-lg cursor-pointer hover:bg-blue-500 transition-colors"
           aria-label="Voltar ao topo"
         >
+          ↑
         </button>
+        
       </div>
     </div>
   );
