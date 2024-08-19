@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Projeto from "./components/Projeto";
 import Objetivo from "./components/Objetivo";
 import Pecas from "./components/Pecas";
-import Contato from "./components/Contato";
+
 import Integrantes from "./components/Integrantes";
 
 function App() {
@@ -17,12 +17,13 @@ function App() {
 
         <main className="w-full max-w-4xl mx-auto py-12 px-6">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/quem-somos" element={<Sobre />} />
             <Route path="/projeto" element={<Projeto />} />
             <Route path="/objetivo" element={<Objetivo />} />
             <Route path="/pecas" element={<Pecas />} />
-            <Route path="/contato" element={<Contato />} />
+            
             <Route path="/integrantes" element={<Integrantes />} />
           </Routes>
         </main>
