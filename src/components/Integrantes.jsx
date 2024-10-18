@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Gui from '../assets/Gui.svg'
-import Kz from '../assets/kaua.svg'
+import Kz from '../assets/Kaua.svg'
 import Tet from '../assets/Tt.svg'
 
 const Integrantes = () => {
