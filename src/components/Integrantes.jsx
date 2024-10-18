@@ -1,20 +1,24 @@
 import React from 'react';
 
+import Gui from '../assets/Gui.svg'
+import Kz from '../assets/kaua.svg'
+import Tet from '../assets/Tt.svg'
+
 const Integrantes = () => {
   const students = [
     {
       name: 'Matheus Melo',
       age: 17,
       school: 'Aluno do Colégio UNASP',
-      image: '', 
+      image:  Kz,
       linkedin: '',
-      instagram: '', 
+      instagram: '',
     },
     {
       name: 'Guilherme Távora',
       age: 17,
       school: 'Aluno do Colégio UNASP',
-      image: '', 
+      image: Gui,
       linkedin: '', 
       instagram: '', 
     },
@@ -22,7 +26,7 @@ const Integrantes = () => {
       name: 'Kauã Ramos',
       age: 18,
       school: 'Aluno do Colégio UNASP',
-      image: '', 
+      image: Tet, 
       linkedin: '', 
       instagram: '', 
     },
