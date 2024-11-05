@@ -68,15 +68,32 @@ function Home() {
               </ul>
             </section>
 
-            {/* Seção de Vídeo Adicionada */}
+            {/* Seção de Vídeo Principal */}
             <section className="my-6 sm:my-8 lg:my-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-4 sm:mb-6 lg:mb-8">
                 Apresentação do Jogo
               </h2>
               <div className="video-container">
                 <iframe
-                  className="w-full h-full aspect-video"
+                  className="w-full aspect-video"
                   src="https://www.youtube.com/embed/Rl4D-I4ZowY"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </section>
+
+            {/* Nova Seção de Vídeo Complementar */}
+            <section className="my-6 sm:my-8 lg:my-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-4 sm:mb-6 lg:mb-8">
+                Vídeo Funcional do Projeto
+              </h2>
+              <div className="video-container">
+                <iframe
+                  className="w-full aspect-video"
+                  src="https://www.youtube.com/embed/WaT4c04bpp0" // Substitua EXEMPLO pelo ID do novo vídeo
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
