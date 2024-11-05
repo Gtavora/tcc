@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <header className="bg-white shadow-lg">
-        <div className="container mx-auto p-4 sm:p-8  z-10 text-center">
+        <div className="container mx-auto p-4 sm:p-8 z-10 text-center">
           <h1 className="text-blue-400 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">VisionTech</h1>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl">
             Visando um Mundo Melhor através da Tecnologia.
@@ -75,13 +75,12 @@ function Home() {
               </h2>
               <div className="video-container">
                 <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/watch?v=Rl4D-I4ZowY"
+                  className="w-full h-full aspect-video"
+                  src="https://www.youtube.com/embed/Rl4D-I4ZowY"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </section>
@@ -112,7 +111,6 @@ function Home() {
         >
           ↑
         </button>
-        
       </div>
     </div>
   );
