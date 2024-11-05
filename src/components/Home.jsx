@@ -68,6 +68,24 @@ function Home() {
               </ul>
             </section>
 
+            {/* Seção de Vídeo Adicionada */}
+            <section className="my-6 sm:my-8 lg:my-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-4 sm:mb-6 lg:mb-8">
+                Apresentação do Jogo
+              </h2>
+              <div className="video-container">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/watch?v=Rl4D-I4ZowY"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </section>
+
             <section className="my-6 sm:my-8 lg:my-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-4 sm:mb-6 lg:mb-8">Nossas Referências</h2>
               <ul className="list-disc ml-4 sm:ml-6 lg:ml-8 space-y-3 sm:space-y-4 lg:space-y-5 text-sm sm:text-base md:text-lg lg:text-xl">
